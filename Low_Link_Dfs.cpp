@@ -24,8 +24,8 @@ void dfs(int u, int p){
 			}
 
 			if(low[v] >= pre[u] && p != -1){ // p == -1 -> p eh a raiz (convencao)
-                artP[u] = true;
-            }
+                		artP[u] = true;
+            		}
 		}
 	}
 
