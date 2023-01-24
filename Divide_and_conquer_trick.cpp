@@ -1,3 +1,6 @@
+//Queremos MINIMIZAR o custo total
+//Provar monotonicidade: ideia da matriz
+
 void dct(int l, int r, int optL, int optR, int k){
 	if(l > r) return;
 
