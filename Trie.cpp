@@ -1,8 +1,8 @@
 const int ALP = 30; 		//tamanho da alfabeto (normalmente 26)
-const int MAX = 2e6 + 15;   //numero de prefixos
+const int MAX = 2e6 + 15;   	//numero de prefixos
 
 int trie[MAX][ALP], cnt;
-bool end[MAX]; 				//marca se um prefixo eh fim de alguma palavra
+bool end[MAX]; 			//marca se um prefixo eh fim de alguma palavra
 
 void add(string& s){
 	int cur = 0;
