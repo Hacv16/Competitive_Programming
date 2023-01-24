@@ -1,2 +1,2 @@
 # Colinha
-Templates, solucoes, etc.
+Templates, soluções, etc.
