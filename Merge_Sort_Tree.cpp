@@ -2,7 +2,7 @@ vector<int> seg[4 * MAX];
  
 void build(int p, int l, int r){
   if(l == r){
-    seg[p].pb(v[l]);
+    seg[p].emplace_back(v[l]);
     return;
   }
  
