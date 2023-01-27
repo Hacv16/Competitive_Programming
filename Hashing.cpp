@@ -4,7 +4,7 @@ const ll MOD[] = {1417504009, 1866965459};
 struct Hashing{
 	vector<ll> Hash;
 
-	Hashing(string& s) {
+	Hashing (string& s){
 		ll Hash1 = 0, Hash2 = 0, n = s.size(), pow0 = B, pow1 = B;
 
 		Hash.resize(n);
