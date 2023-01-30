@@ -31,7 +31,7 @@ ll update(ll i, ll x, ll p, ll l, ll r){
     ll m = (l + r) >> 1;
 
     if(i <= m) getL[novo] = update(i, x, getL[novo], l, m);
-    else  getR[novo] = update(i, x, getR[novo], m + 1, r);
+    else getR[novo] = update(i, x, getR[novo], m + 1, r);
 
     seg[novo] = seg[getL[novo]] + seg[getR[novo]];
 
