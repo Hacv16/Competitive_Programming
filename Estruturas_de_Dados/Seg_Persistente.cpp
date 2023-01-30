@@ -25,7 +25,7 @@ ll update(ll i, ll x, ll p, ll l, ll r){
 
     if(l == r){
         seg[novo] += x;
-        return;
+        return novo;
     }
 
     ll m = (l + r) >> 1;
