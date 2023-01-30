@@ -22,10 +22,6 @@ vector<int> kmp(string& t, string& s){
         }
         
         if(s[j] == t[i]) j++;
-        
-        if(j == s.size()){
-            mtc.pb(i - j + 2), j = p[j - 1];
-        }
     }
  
     return mtc;
