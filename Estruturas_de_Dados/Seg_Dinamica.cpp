@@ -31,7 +31,6 @@ void update(ll i, ll x, ll idx, ll p, ll l, ll r){
 }
 
 ll bb(ll x, ll p, ll l, ll r){
-    if(seg[p] < x || l > x) return -1;
     if(l == r) return getId[p];
     ll m = (l + r) >> 1;
     if(seg[getL[p]] >= x) return bb(x, getL[p], l, m);
