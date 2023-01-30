@@ -20,11 +20,11 @@ struct Hashing{
 			P2[i] = (B * P2[i - 1]) % MOD2;
 		}
 
-		Hash1[0] = Hash2[0] = (s[0] - 'a' + 1);
+		Hash1[0] = Hash2[0] = (s[0]);
 
 		for(int i = 1; i < n; i++){
-			Hash1[i] = (Hash1[i - 1] * B + (s[i] - 'a' + 1)) % MOD1;
-			Hash2[i] = (Hash2[i - 1] * B + (s[i] - 'a' + 1)) % MOD2;
+			Hash1[i] = (Hash1[i - 1] * B + (s[i])) % MOD1;
+			Hash2[i] = (Hash2[i - 1] * B + (s[i])) % MOD2;
 		}
 	}
 
