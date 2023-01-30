@@ -29,10 +29,10 @@ struct Hashing{
 	}
 
 	ll subHash(int i, int j){
-		if(i == 0) return (Hash1[j] << 30) | (Hash2[j]);
+		if(i == 0) return (Hash1[j] << 30) ^ (Hash2[j]);
 		ll ret1 = ((Hash1[j] - (Hash1[i - 1] * P1[j - i + 1])) % MOD1 + MOD1) % MOD1;
 		ll ret2 = ((Hash2[j] - (Hash2[i - 1] * P2[j - i + 1])) % MOD2 + MOD2) % MOD2;
-		return (ret1 << 30) | (ret2);
+		return (ret1 << 30) ^ (ret2);
 	}
 
 	ll hash(void) { return subHash(0, n - 1); }
