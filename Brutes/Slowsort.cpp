@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//A ideia eh fazer um multiply and surrender
+
 vector<int> v;
 
 void slowsort(int l, int r){
