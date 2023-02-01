@@ -22,11 +22,6 @@ struct pt{
         return (*this) % p > 0;
     }
 
-    bool operator << (pt p){
-        if(y == p.y) return x < p.x; 
-        return y < p.y;
-    }
-
     pt mid(pt p){return pt((x + p.x) / 2, (y + p.y) / 2);}                                          //ponto medio
     ll dist(pt p){ll dx = x - p.x, dy = y - p.y; return dx * dx + dy * dy;}                         //tio pit
     ld getAngle(pt p){ld t = atan2((*this) % p, (*this) * p); if(t < 0) t = abs(t) + PI; return t;}
