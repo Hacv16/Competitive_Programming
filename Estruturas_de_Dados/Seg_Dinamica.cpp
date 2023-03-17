@@ -1,38 +1,44 @@
-vector<ll> seg, getL, getR, getId;
+class sparseSeg{
+	public:
+		int create(void){
+			seg.push_back(0);
+			getL.push_back(-1);
+			getR.push_back(-1);
+			return seg.size() - 1;
+		}
 
-ll create(void){
-    seg.push_back(-1);
-    getL.push_back(0);
-    getR.push_back(0);;
-    getId.push_back(-1);
-    return seg.size() - 1;
-}
+		void initiate(){ create(); create(); }
 
-void update(ll i, ll x, ll idx, ll p, ll l, ll r){
-    if(i > r || i < l) return;
-    if(l == r){
-        seg[p] = x;
-        getId[p] = idx;
-        return;
-    }
+		void update(ll i, ll x, ll p, ll l, ll r){
+			if(i < l || i > r) return;
+			if(l == r){
+				seg[p] += x;
+				return;
+			}
 
-    ll m = (l + r) >> 1;
+			ll m = (l + r) >> 1;
 
-    if(i <= m){
-        if(getL[p] == 0) { ll aux = create(); getL[p] = aux; }
-        update(i, x, idx, getL[p], l, m);
+			if(getL[p] == -1){ int aux = create(); getL[p] = aux; }
+			update(i, x, getL[p], l, m);
 
-    }else{
-        if(getR[p] == 0) { ll aux = create(); getR[p] = aux; }
-        update(i, x, idx, getR[p], m + 1, r);
-    }
+			if(getR[p] == -1){ int aux = create(); getR[p] = aux; } 
+			update(i, x, getR[p], m + 1, r);
 
-    seg[p] = max(seg[getL[p]], seg[getR[p]]);
-}
+			seg[p] = seg[ getL[p] ] + seg[ getR[p] ];
+		}
 
-ll bb(ll x, ll p, ll l, ll r){
-    if(l == r) return getId[p];
-    ll m = (l + r) >> 1;
-    if(seg[getL[p]] >= x) return bb(x, getL[p], l, m);
-    return bb(x, getR[p], m + 1, r);
-}
+		ll query(ll a, ll b, ll p, ll l, ll r){
+			if(a > r || b < l) return 0;
+			if(a <= l && r <= b) return seg[p];
+
+			ll m = (l + r) >> 1, ans = 0;
+
+			if(getL[p] != -1) ans += query(a, b, getL[p], l, m);
+			if(getR[p] != -1) ans += query(a, b, getR[p], m + 1, r);
+
+			return ans;
+		}
+
+	protected:
+		vector<ll> seg, getL, getR;
+};
