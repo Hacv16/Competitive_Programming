@@ -7,7 +7,10 @@ class SparseSeg{
 			return seg.size() - 1;
 		}
 
-		void initiate(){ create(); create(); }
+		void setUp(){ 
+			seg.clear(); getL.clear(); getR.clear();
+			create(); create(); 
+		}
 
 		int getLeft(int p){
 			if(getL[p] == 0){ int aux = create(); getL[p] = aux; }
