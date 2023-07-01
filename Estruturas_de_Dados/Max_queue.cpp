@@ -7,12 +7,12 @@ struct MaxQ{
 		q = deque<pair<ll, int>> (0);
 	}
  
-	void pop() {
+	void pop(){
 		if(q.size() && q.front().second == ini++)
 			q.pop_front();
 	}
  
-	void push(int x) {
+	void push(int x){
 		while(q.size() && q.back().first < x - sum)
 			q.pop_back();
 		q.push_back(make_pair(x - sum, fim++));
