@@ -28,10 +28,10 @@ void decompose(int u, int chainHead){
 	tin[u] = ++timer;
 
 	if(adj[u].empty()) return;
-    int heavy = adj[u][0];
+    	int heavy = adj[u][0];
 
-    if(heavy != pai[u])
-    	decompose(heavy, chainHead);
+    	if(heavy != pai[u])
+    		decompose(heavy, chainHead);
         
 	for(auto light : adj[u]){
 	    if(light == pai[u] || light == heavy) continue;
@@ -114,7 +114,8 @@ int32_t main(void){
 	dfsInit(1, -1);
 	decompose(1, 1);
 
-	while(q--){
+	while(q--)
+	{
 		int a, b, c, d; cin >> a >> b >> c >> d;
 		updatePath(a, b, 1);
 
