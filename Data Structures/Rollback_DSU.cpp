@@ -1,3 +1,12 @@
+/*
+    Union-Find Structure that supports rollback operations
+    Note that path compression cannot be used.
+
+    Complexity: O(logN) per find/union operation
+                O(1) per rollback operation
+*/
+
+
 #include <bits/stdc++.h>
 using namespace std;
 vector<int> pai, sub;

@@ -1,3 +1,10 @@
+/*
+    Basic idea is to divide a set into two halves, calculate some informations
+    for each half and then combine these informations.
+
+    Complexity: O(2^(N/2))
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
  
@@ -19,7 +26,8 @@ const int MOD = 1e9 + 7;
 ll n, s, ans;
 vector<ll> a, b;
  
-vector<ll> subs(vector<ll>&v){
+vector<ll> subs(vector<ll>&v
+){
     ll n = sz(v);
     vector<ll> ans;
  
@@ -37,7 +45,8 @@ vector<ll> subs(vector<ll>&v){
     return ans;
 }
  
-int main(){
+int main()
+{
     ios_base::sync_with_stdio(false);
     cin.tie(NULL); 
  
@@ -52,7 +61,8 @@ int main(){
  
     vector<ll> sa = subs(a), sb = subs(b);
  
-    for(auto x : sa){
+    for(auto x : sa)
+    {
         ll idx1 = lower_bound(all(sb), s - x) - sb.begin();
         ll idx2 = upper_bound(all(sb), s - x) - sb.begin();
  
@@ -60,6 +70,4 @@ int main(){
     }
  
     cout << ans << '\n';
- 
-    return 0;
 }

@@ -1,3 +1,8 @@
+/*
+    Basic structure of a 2D Binary Indexed Tree.
+    Complexity: O(log^2(N)) per operation
+*/
+
 void update(int x, int y, int v){
     for(int i = x; i <= n; i += (i & -i))
         for(int j = y; j <= n; j += (j & -j))

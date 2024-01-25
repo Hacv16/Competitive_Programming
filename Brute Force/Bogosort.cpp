@@ -1,3 +1,8 @@
+/* 
+	Slow(est) sorting algorithm. No practical use. Still, quite funny.
+	Complexity: ?
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
