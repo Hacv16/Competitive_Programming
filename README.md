@@ -1,4 +1,4 @@
-# Competitive Programming
-Templates, soluções, etc.
+# Competitive Programming Repository
 
-![image](https://github.com/Hacv16/Competitive_Programming/assets/123428940/809d09d8-a483-419e-a391-f756a253ba2c)
+Welcome to my personal repository dedicated to competitive programming! Here, you'll find a collection of well-organized and efficient algorithms spanning various domains such as graph theory, math, geometry, dynamic programming, data structures, strings, and more (going beyond OBI's level). Feel free to explore and enhance your competitive programming skills with this comprehensive resource.
+
